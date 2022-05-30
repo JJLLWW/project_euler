@@ -4,6 +4,7 @@
 
 // how to deal with loads of functions with very similar signatures?
 int main() {
-  fmt::print("sahbbjdasdbh");
-  return 0;
+  // peuler::test_prob1();
+  peuler::ull res = peuler::solve_prob1(1000, 3, 5);
+  fmt::print("Got {}.", res);
 }
