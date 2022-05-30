@@ -1,0 +1,17 @@
+Vcpkg example, executable not included on the path ):
+D:\src\cmake-test\build> cmake .. "-DCMAKE_TOOLCHAIN_FILE=D:\src\vcpkg\scripts\buildsystems\vcpkg.cmake"
+# correct for my win machine
+cmake .. "-DCMAKE_TOOLCHAIN_FILE=D:\Users\jack\git\vcpkg\scripts\buildsystems\vcpkg.cmake"
+
+when installing defaults to 32 bit versions of everything for some reason, need
+vcpkg install libname:x64-windows
+
+"vcpkg integrate install" makes libraries available to Visual Studio, but VSCode intellisense seems flaky.
+
+if vcpkg.json in current directory, vcpkg will install libraries into a vcpkg_installed subdirectory.
+
+fmt example
+https://vcpkg.readthedocs.io/en/latest/specifications/manifests/
+
+VCPKG_ROOT environment variable (manually set by the user yuck)
+
