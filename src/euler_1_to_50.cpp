@@ -2,6 +2,8 @@
 #include <stdexcept>
 // lcm, gcd 
 #include <numeric>
+// sqrt
+#include <cmath>
 
 namespace peuler {
     // get the number of multiples of A which are less than N. (should this be templated?)
@@ -40,5 +42,20 @@ namespace peuler {
         ull sum_A_and_B = sum_first_n_multk(nmult_A_and_B, LCM_AB);
         ull sum_A_or_B = sum_A + sum_B - sum_A_and_B;
         return sum_A_or_B;
+    }
+
+    // index of greatest member of the fibonacci sequence <= N.
+
+    double geom_series(double A, double n) {
+        return (1-std::pow(A,n+1))/(1-A);
+    }
+    // know from calculation that the 33rd term is the last one we care about.
+    double solve_prob2() {
+        // even terms indeces are given by 2 + 3*i with 0<=i<=10. Using formula for 
+        // fibonaci numbers + geometric series.
+        double A = (1 + std::sqrt(5))/2;
+        double B = (1 - std::sqrt(5))/2;
+        double ans = (std::pow(A,2)*geom_series(A,10) + std::pow(B,2)*geom_series(B,10))/std::sqrt(5);
+        return ans;
     }
 } // namespace peuler

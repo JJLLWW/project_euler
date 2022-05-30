@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.11.0)
 
 project(hello_world)
-set(EXE_NAME "output")
+set(EXE_NAME "main")
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON CACHE INTERNAL "")
 # std::lcm and std::gcd require C++17
 set(CMAKE_CXX_STANDARD 17)
